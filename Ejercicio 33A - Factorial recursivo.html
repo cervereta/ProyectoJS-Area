@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 33A - Factorial recursivo</title>
+</head>
+<body>
+    <h1>Ejercicio 33A: Factorial recursivo.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Factorial recursivo</button>
+    <hr>
+    <p id="mensaje1"></p>
+    <p id="mensaje2"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            let num = parseInt(prompt("Introduce un número: "));
+
+            document.getElementById("mensaje1").innerHTML = factorialRecursivo(num);
+        }
+
+        function factorialRecursivo(num) {
+            if (num == 0 || num == 1) return 1;
+            return num * factorialRecursivo(num - 1);
+        }
+    </script>
+</body>
+</html>

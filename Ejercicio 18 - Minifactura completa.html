@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 18 - Minifactura</title>
+
+    <!-- Le damos un poco de estilo a la tabla de la factura -->
+    <style>
+        /* Para su impresion en papel */
+        @media print {
+            h1, hr, button { 
+                display: none;
+            }
+        }
+
+        @media print, screen {
+            table, th, tr, td {
+                border: 0;
+                border-collapse: collapse;
+                padding: 15px;
+            }
+
+            th {
+                border-bottom: 1px solid black;
+                border-top: 1px solid black;
+                background-color: #FFFFFF;
+            }
+    /*
+            tr:nth-last-child(n) {
+                border-top: 1px solid black;
+            }
+    */
+            tr:nth-last-child(even) {
+                background-color: #EEEEEE;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 18: programa que pide al usuario datos para una factura.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Calcular factura</button>
+    <hr>
+    <p id="mensaje"></p>
+    <!-- Botón para mandar a la impresora -->
+    <button onclick="window.print()">Imprime la factura</button>
+
+    <script>
+        function miFuncion() {
+            let articulo, cantidad, precio, total, total_final = 0, opcion, iva, 
+                mensaje = "<table><tr><th>Artículo</th><th>Cantidad</th><th>Precio</th><th>IVA</th><th>Total</th></tr>";
+
+            do {
+                articulo = prompt("Introduce el nombre del artículo: ");
+                cantidad = parseInt(prompt("Introduce la cantidad: "));
+                precio   = parseFloat(prompt("Introduce el precio: "));
+
+                opcion = prompt("¿Qué tipo de IVA hay que cargar?\n1.- Normal: 21%\n2.- Reducido: 10%\n3.- Superreducido: 4%\n");
+                switch (opcion) {
+                    case "1":
+                        iva = 0.21;
+                        break;
+                    case "2":
+                        iva = 0.10;
+                        break;
+                    case "3":
+                        iva = 0.04;
+                        break;
+                    default:       
+                        iva = 0.21;
+                }
+
+                total = cantidad * precio * (1 + iva);
+                
+                //total_final = total_final + total;
+                total_final += total;
+/*
+                mensaje += "El total de comprar " + cantidad + " de " + articulo +
+                " a " + precio + " la unidad con un IVA de " + (iva*100) + "% es: " + (Math.round(total * 100) / 100) + "<br>";
+*/
+                mensaje += "<tr><td>" + articulo + "</td><td>" + cantidad + "</td><td>" + precio + "</td><td>" + (iva*100) + "%</td><td>" + (Math.round(total * 100) / 100) + "€</td></tr>"
+
+                opcion = prompt("¿Quieres introducir más artículos? (S/N)");
+            } while(opcion == "S" || opcion == "s");
+
+            //mensaje += "<br><em>Total de factura: " + (Math.round(total_final * 100) / 100) + "€</em>";
+            
+            mensaje += "<tr><th colspan='4'>Total</th><th>" + (Math.round(total_final * 100) / 100) + "€</th></tr></table>";
+            
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

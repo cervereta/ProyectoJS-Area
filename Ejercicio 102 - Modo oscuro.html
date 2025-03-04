@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 102 - Modo oscuro</title>
+    
+    <style>
+        #capa {
+            width: 100%;
+            height: 500px;
+
+            background-color: aquamarine;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Ejercicio 102: Modo oscuro.</h1>
+    <hr>
+    <button id="boton" type="button" onclick="modoOscuro();">Modo oscuro</button>
+    <hr>
+    <section>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere laboriosam delectus molestias ducimus reprehenderit sit omnis maxime earum atque neque minus necessitatibus aut ipsam deserunt sunt, exercitationem deleniti magni illo?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facilis, deserunt recusandae dignissimos optio quaerat aliquam voluptatem aut debitis architecto dolorum dolor placeat tempore quisquam ad repellat modi et corrupti.
+        Culpa cupiditate placeat repellendus beatae tempore saepe, eos maxime, fugit voluptatibus ullam quo quod dolor sit, provident accusantium voluptatem in. Sed nulla ipsum maxime odit amet, quidem esse aliquid! Corporis?
+        Ut iste illum quam sunt aliquid amet fugit odio sed ratione. Corporis eos cum accusantium, perferendis similique eveniet mollitia explicabo veritatis consectetur ratione sit aliquid delectus. Minima recusandae consectetur ipsum!
+        Tenetur voluptatem assumenda ratione optio placeat, commodi aperiam nesciunt suscipit iure quos ducimus iste, delectus dicta necessitatibus, enim excepturi dignissimos quo maiores accusamus facere voluptatum quam! Unde eligendi aspernatur beatae.
+        Quod asperiores voluptates consequatur pariatur soluta? Dolorem corrupti veritatis ipsam eum! Voluptas nesciunt dolorem officia soluta est maiores ex esse autem odio. Aperiam voluptas doloribus libero ipsam! Aperiam, saepe id!
+        Explicabo quam facere accusantium cupiditate doloremque similique nostrum, consequuntur sint mollitia officiis tenetur itaque earum in ea quos quae dolorum tempore fugiat aspernatur obcaecati eligendi. Consequuntur quasi sit alias quaerat.
+        Expedita perferendis cum ducimus quam veritatis provident magni. Aliquam, nisi sint. Id temporibus reprehenderit recusandae ut unde expedita eligendi cumque officia, porro rem quidem voluptatum, corrupti cupiditate provident hic ullam!
+        Ut porro, dicta officiis quod voluptatibus dignissimos esse illo. Maxime voluptatibus quas repellat aut optio praesentium doloribus blanditiis quis est corporis ad quasi esse, at cum delectus iure vitae quisquam.
+        Quo, dignissimos nihil eos molestiae nesciunt similique hic provident ipsa in, porro maxime nobis quidem. Praesentium, et quis. Amet, ratione quod totam quis tempora sint tenetur sapiente adipisci quo doloremque.
+        Asperiores pariatur aut animi minima officia nemo, architecto voluptate repellendus incidunt in dolores, repudiandae amet provident suscipit, neque obcaecati. Dolores velit delectus tenetur ea non, atque deleniti cum officia explicabo!
+
+    </section>
+
+    <script>
+        // Función que hace de programa principal
+        function modoOscuro() {
+            if (document.body.style.backgroundColor == "black") {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                document.getElementById("boton").innerHTML = "Modo oscuro";
+            }
+            else {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                document.getElementById("boton").innerHTML = "Modo claro";
+            }
+        }
+    </script>
+</body>
+</html>

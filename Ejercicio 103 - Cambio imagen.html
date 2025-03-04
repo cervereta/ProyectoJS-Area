@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 103 - Cambiar imagen</title>
+</head>
+<body>
+    <h1>Ejercicio 103: Cambiar imagen.</h1>
+    <hr>
+    <button id="boton" type="button" onclick="cambioImagen();">Cambiar imagen</button>
+    <hr>
+    <section>
+        <img id="imagen" src="gato_atento.png" alt="imagen de prueba">
+    </section>
+
+    <script>
+        // Función que hace de programa principal
+        function cambioImagen() {
+            if (document.getElementById("imagen").src.includes("gato_atento.png") ) {
+                document.getElementById("imagen").src = "gato_atento2.jpg"; 
+            }
+            else {
+                document.getElementById("imagen").src = "gato_atento.png";             }
+            }
+    </script>
+</body>
+</html>

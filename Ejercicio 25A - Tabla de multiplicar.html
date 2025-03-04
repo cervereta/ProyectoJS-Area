@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 25A - Tabla de multiplicar de un número</title>
+</head>
+<body>
+    <h1>Ejercicio 25: tabla de multiplicar de un número.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Tabla de un número</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", i;
+
+            // Pedimos la tabla de multiplicar por teclado
+            let tabla = parseInt(prompt("Introduce el número de la tabla que quieras mostrar: "));
+
+            for (i = 0; i <= 10; i++)
+                mensaje += tabla + " x " + i + " = " + (tabla*i) + "<br>";
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

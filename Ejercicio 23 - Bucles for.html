@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 23 - Imprimir series numéricas</title>
+</head>
+<body>
+    <h1>Ejercicio 23: probando el bucle for.</h1>
+    <h2>Empezamos a usar bucles for.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Imprimir números</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", i;
+
+            // Recorre los números entre el 1 y el 100 de 1 en 1
+            for (i = 1; i <= 100; i++) {
+                mensaje += i + ", ";
+            }
+
+            mensaje += "<br><hr><br>";
+
+            // Recorre los números entre el 100 y el 1 decrecientemente
+            for (i = 100; i >= 1; i--) 
+                mensaje += i + ", ";
+
+            mensaje += "<br><hr><br>";
+
+            // Números pares entre el -50 y el 50
+            // Hacemos un incremento de 2 en cada vuelta
+            for (i = -50; i <= 50; i += 2) 
+                mensaje += i + ", ";
+
+            mensaje += "<br><hr><br>";
+
+            // Números pares entre el -50 y el 50
+            // Incrementamos de 1 en 1 y preguntamos en cada vuelta si es múltiplo
+            for (i = -50; i <= 50; i++) {
+                if (i % 2 == 0) {
+                    mensaje += i + ", ";
+                }
+            }
+            mensaje += "<br><hr><br>";
+
+            // Recorre los números múltiplos de 5 entre el 127 y el 258
+            // Los recorremos todos de 1 en 1 y preguntamos si es múltiplo
+            for (i = 127; i <= 258; i++) {
+                if (i % 5 == 0) {
+                    mensaje += i + ", ";
+                }
+            }
+            mensaje += "<br><hr><br>";
+
+            // Recorre los números múltiplos de 5 entre el 127 y el 258
+            // Ajusto el primer número de la serie a un múltiplo de 5 e incrementamos de 5 en 5
+            for (i = 130; i <= 258; i += 5) {
+                if (i % 5 == 0) {
+                    mensaje += i + ", ";
+                }
+            }
+
+            mensaje += "<br><hr><br>";
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

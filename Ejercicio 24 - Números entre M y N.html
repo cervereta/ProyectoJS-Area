@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 24 - Números entre M y N</title>
+</head>
+<body>
+    <h1>Ejercicio 24: números entre M y N.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Imprimir series numéricas</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", i;
+
+            let m = parseInt(prompt("Introduce un número: "));
+            let n = parseInt(prompt("Introduce otro número: "));
+
+            // Calculamos el mayor y el menor
+            if (m > n) {
+                mayor = m;
+                menor = n;
+            }
+            else {
+                mayor = n;
+                menor = m;
+            }
+
+            // Recorre los números entre el 1 y el 100 de 1 en 1
+            for (i = menor; i <= mayor; i++) {
+                mensaje += i + ", ";
+            }
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

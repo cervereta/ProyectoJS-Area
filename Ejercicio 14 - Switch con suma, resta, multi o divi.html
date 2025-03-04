@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 14 - Menú de operaciones aritméticas</title>
+</head>
+<body>
+    <h1>Ejercicio 14: programa que realiza sumas, restas, multiplicaciones, divisiones y raices cuadradas.</h1>
+    <h2>Las opciones del menú se gestionan con switch</h2>
+    <hr>
+    <button type="button" onclick="miFuncion()">Menú con operaciones aritméticas</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let opcion = parseInt(prompt("\nPor favor, introduce la opción que desees:\n\n1.- Sumar\n2.- Restar\n3.- Multiplicar\n4.- Dividir\n5.- Raiz cuadrada\n\n"));
+            
+            console.log(opcion);
+            
+            let a, b;
+
+            switch (opcion) {
+                // Suma
+                case 1:
+                    a = parseFloat(prompt("Por favor, introduce un número: "));
+                    b = parseFloat(prompt("Por favor, introduce otro número: "));
+                
+                    document.getElementById("mensaje").innerHTML = 
+                        "La suma de " + a + " + " + b + " es:  " + (a+b);
+
+                    break;
+
+                // Restar
+                case 2:
+                    a = parseFloat(prompt("Por favor, introduce un número: "));
+                    b = parseFloat(prompt("Por favor, introduce otro número: "));
+                
+                    document.getElementById("mensaje").innerHTML = 
+                        "La resta de " + a + " - " + b + " es:  " + (a-b);
+            
+                    break;
+                // Multiplicación
+                case 3:
+                    a = parseFloat(prompt("Por favor, introduce un número: "));
+                    b = parseFloat(prompt("Por favor, introduce otro número: "));
+                
+                    document.getElementById("mensaje").innerHTML = 
+                        "La multiplicación de " + a + " * " + b + " es:  " + (a*b);
+        
+                    break;
+            
+                // División          
+                case 4:
+                    a = parseFloat(prompt("Por favor, introduce un número: "));
+                    b = parseFloat(prompt("Por favor, introduce otro número: "));
+                
+                    document.getElementById("mensaje").innerHTML = 
+                        "La división de " + a + " / " + b + " es:  " + (a/b);
+
+                    break;
+
+                // División          
+                case 5:
+                    a = parseFloat(prompt("Por favor, introduce un número: "));
+                
+                    document.getElementById("mensaje").innerHTML = 
+                        "La raiz cuadrada de " + a + " es:  " + (Math.sqrt(a));
+
+                    break;
+
+                default:
+                    document.getElementById("mensaje").innerHTML = 
+                        "La opción introducida es incorrecta. Introduce un valor de 1 a 5.";
+            }             
+        }
+    </script>
+</body>
+</html>

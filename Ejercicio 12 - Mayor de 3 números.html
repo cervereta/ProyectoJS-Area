@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 12 - Mayor de 3 números</title>
+</head>
+<body>
+    <h1>Ejercicio 12: programa que pide al usuario 3 números e indica cual es el mayor.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion()">Mayor de 3 números</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let a = parseFloat(prompt("Por favor, introduce un número: "));
+            let b = parseFloat(prompt("Por favor, introduce otro número: "));
+            let c = parseFloat(prompt("Por favor, introduce el último número: "));
+
+            // Versión 1
+            if (a >= b && a >= c) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "El mayor de " + a + ", " + b + " y " + c + "es: " + a;
+            } 
+            // No es necesario preguntar por (nota >= 0 &&nota < 5)
+            else if (b >= a && b >= c) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "El mayor de " + a + ", " + b + " y " + c + "es: " + b;
+            } 
+            else if (c >= a && c >= b) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "El mayor de " + a + ", " + b + " y " + c + "es: " + c;
+            }             
+            else //if (a >= b && a >= c) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "Ha sucedido un error inesperado";
+            }
+
+            // Versión 2
+            if (a >= b && a >= c) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "El mayor de " + a + ", " + b + " y " + c + "es: " + a;
+            } 
+            // No es necesario preguntar por (nota >= 0 &&nota < 5)
+            else if (b >= c) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "El mayor de " + a + ", " + b + " y " + c + "es: " + b;
+            } 
+            else 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "El mayor de " + a + ", " + b + " y " + c + "es: " + c;
+            }             
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 40A - Vector de primos</title>
+</head>
+<body>
+    <h1>Ejercicio 40A: Vector de primos.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Vector</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            const tam = 100;
+            let cont = 0, cont2 = 0;
+            let vec = crearVector(tam);
+
+            //let vec2 = crearVectorMaN(tam, -50, 50);
+            let vec2 = crearVectorMaN(tam, 50, 100);
+            
+            cont = contarPrimos(vec);
+            cont2 = contarPrimos(vec2);
+
+            document.getElementById("mensaje").innerHTML = "Vector: " + vec + "<br>Primos: " + cont + "<br><br>Vector2: " + vec2 + "<br>Primos: " + cont2;
+        }
+        
+        // Función que crea un vector de números aleatorios de tamaño n y lo devuelve
+        function crearVector(n) {
+            let vec = [];
+            for (let i = 0; i < n; i++)
+                vec[i] = parseInt(Math.random() * 100 + 1);
+
+            return vec;
+        }
+
+        // Crea un vector de tamaño tam con valores entre m y n
+        function crearVectorMaN(tam, m, n) {
+            let vec = [];
+            for (let i = 0; i < tam; i++)
+                vec[i] = parseInt(Math.random() * Math.abs(n - m + 1) + m);
+
+            return vec;
+        }
+
+        // Función que cuenta los números primos de un vector recibido por parámetro
+        function contarPrimos(v) {
+            let cont = 0;
+            for(let i = 0; i < v.length; i++)
+                if(esPrimo(v[i])) cont++;
+
+            return cont;
+        }
+
+        // Función que determina si un número es primo o no
+        function esPrimo(n) {
+            for(let i = 2; i < Math.sqrt(n); i++)
+                if (n % i == 0) return false;
+        
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 19 - Factura completa</title>
+</head>
+<body>
+    <h1>Ejercicio 19: programa que pide al usuario datos para una factura.</h1>
+    <h2>Se añade la línea de total al final.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Calcular factura</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let articulo, cantidad, precio, total, total_final = 0, opcion, iva, 
+                mensaje = "<table><tr><th>Artículo</th><th>Cantidad</th><th>Precio</th><th>IVA</th><th>Total</th></tr>";
+
+            do {
+                articulo = prompt("Introduce el nombre del artículo: ");
+                cantidad = parseInt(prompt("Introduce la cantidad: "));
+                precio   = parseFloat(prompt("Introduce el precio: "));
+
+                opcion = prompt("¿Qué tipo de IVA hay que cargar?\n1.- Normal: 21%\n2.- Reducido: 10%\n3.- Superreducido: 4%\n");
+                switch (opcion) {
+                    case "1":
+                        iva = 0.21;
+                        break;
+                    case "2":
+                        iva = 0.10;
+                        break;
+                    case "3":
+                        iva = 0.04;
+                        break;
+                    default:       
+                        iva = 0.21;
+                }
+
+                total = cantidad * precio * (1 + iva);
+                total_final += total;
+
+                mensaje += "<tr><td>" + articulo + "</td><td>" + cantidad + "</td><td>" + precio + "</td><td>" + iva + "</td><td>" + (Math.round(total * 100) / 100) + "€</td></tr>"
+
+                opcion = prompt("¿Quieres introducir más artículos? (S/N)");
+            } while(opcion == "S" || opcion == "s");
+
+            mensaje += "<tr><td colspan='4'>Total</td><td>" + (Math.round(total_final * 100) / 100) + "€</td></tr></table>";
+            
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

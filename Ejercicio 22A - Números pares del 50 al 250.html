@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 22A - Imprimir números pares</title>
+</head>
+<body>
+    <h1>Ejercicio 22A: programa que imprime los números entre el 50 y el 250</h1>
+    <h2>Hacemos uso de bucle while para imprimir series numéricas.</h2>
+    <h2>Recorre todos los números intermedios, pero solo imprime los pares.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Imprimir números</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", i;
+
+            // Valor inicial de i
+            i = 50;
+
+            // Condición de parada
+            while (i <= 250) {
+                if (i % 2 == 0)
+                    mensaje += i + "<br>";                
+
+                // Incrementos el valor de i
+                i++;
+            }
+
+            // Imprimimos el mensaje en pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

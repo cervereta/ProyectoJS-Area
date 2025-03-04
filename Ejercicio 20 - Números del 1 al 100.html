@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 20 - Imprime números consecutivos</title>
+</head>
+<body>
+    <h1>Ejercicio 20: programa que imprime los números entre el 1 y el 100</h1>
+    <h2>Hacemos uso de bucle while para imprimir series numéricas.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Imprimir números</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", i;
+
+            // Valor inicial de i
+            i = 1;
+
+            // Condición de parada
+            while (i <= 100) {
+                // mensaje += i + ", ";
+                mensaje += i + "<br>";                
+                // Incrementos el valor de i
+                i++;
+                // i = i + 1;
+                // i += 1;
+            }
+
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 25 - Tabla de multiplicar del 2</title>
+</head>
+<body>
+    <h1>Ejercicio 25: tabla de multiplicar del 2.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Tabla del 2</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", // Aquí guardo la salida que voy construyendo
+                i,            // Índice del bucle
+                tabla = 2;
+
+            for (i = 0; i <= 10; i++)
+                mensaje += tabla + " x " + i + " = " + (tabla*i) + "<br>";
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

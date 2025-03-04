@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 11 - Nota numérica a textual</title>
+</head>
+<body>
+    <h1>Ejercicio 11: programa que pide al usuario una nota numérica y la transforma en una nota textual.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion()">Convertir nota numérica en textual</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let nota = parseFloat(prompt("Por favor, introduce una nota: "));
+
+            // Si hacemos las comprobaciones por orden (de menor a mayor o vice versa) 
+            // no es necesario indicar la parti inferior del rango
+            if (nota < 0 || nota > 10) 
+            {
+                document.getElementById("mensaje").innerHTML = 
+                    "La nota introducida es incorercta. Debes introducir una nota entre el 0 y el 10.";
+            } 
+            // No es necesario preguntar por (nota >= 0 && nota < 5)
+            else if (nota < 5) 
+            { 
+                document.getElementById("mensaje").innerHTML = 
+                    "El alumno está SUSPENDIDO.";
+            } else if (nota < 6) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El alumno ha sacado un SUFICIENTE.";
+            } else if (nota < 7) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El alumno ha sacado un BIEN.";
+            } else if (nota < 8.5) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El alumno ha sacado un NOTABLE.";
+            } else if (nota < 10) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El alumno ha sacado un SOBRESALIENTE.";
+            } 
+            // No es necesario preguntar por el 10. 
+            // Si llegamos a este punto la nota debe ser 10 obligatoriamente.
+            else { //if (nota == 10) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El alumno ha sacado una MATRICULA DE HONOR.";
+            }
+
+        }
+    </script>
+</body>
+</html>

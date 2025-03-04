@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 15B - Cuenta números introducidos por el usuario</title>
+</head>
+<body>
+    <h1>Ejercicio 15: programa que cuenta números introducidos por el usuario.</h1>
+    <h2>Versión con bucle do while, posiblemente la más elegante.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion()">Vamos a contar números</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let num, cont = 0;
+           
+            do {
+                num = parseInt(prompt("\nPor favor, introduce un número"));
+                
+                if (num != 0) cont++;
+                console.log(cont);
+            } while (num != 0)
+            
+            document.getElementById("mensaje").innerHTML = 
+                "El usuario ha introducido " + cont + " números.";
+
+        }
+    </script>
+</body>
+</html>

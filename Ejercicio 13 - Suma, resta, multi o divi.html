@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 13 - Menú de operaciones aritméticas</title>
+</head>
+<body>
+    <h1>Ejercicio 13: programa que realiza sumas, restas, multiplicaciones y divisiones.</h1>
+    <h2>Las opciones del menú se gestionan con if/else if/else</h2>
+    <hr>
+    <button type="button" onclick="miFuncion()">Menú con operaciones aritméticas</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let opcion = parseInt(prompt("\nPor favor, introduce la opción que desees:\n\n1.- Sumar\n2.- Restar\n3.- Multiplicar\n4.- Dividir\n"));
+            
+            console.log(opcion);
+            
+            // Suma
+            if (opcion == 1) 
+            {
+                let a = parseFloat(prompt("Por favor, introduce un número: "));
+                let b = parseFloat(prompt("Por favor, introduce otro número: "));
+            
+                document.getElementById("mensaje").innerHTML = 
+                    "La suma de " + a + " + " + b + " es:  " + (a+b);
+            } 
+            // Restar
+            else if (opcion == 2) 
+            {
+                let a = parseFloat(prompt("Por favor, introduce un número: "));
+                let b = parseFloat(prompt("Por favor, introduce otro número: "));
+            
+                document.getElementById("mensaje").innerHTML = 
+                    "La resta de " + a + " - " + b + " es:  " + (a-b);
+            } 
+            // Multiplicación
+            else if (opcion == 3) 
+            {
+                let a = parseFloat(prompt("Por favor, introduce un número: "));
+                let b = parseFloat(prompt("Por favor, introduce otro número: "));
+            
+                document.getElementById("mensaje").innerHTML = 
+                    "La multiplicación de " + a + " * " + b + " es:  " + (a*b);
+            }   
+            // División          
+            else if (opcion == 4) 
+            {
+                let a = parseFloat(prompt("Por favor, introduce un número: "));
+                let b = parseFloat(prompt("Por favor, introduce otro número: "));
+            
+                document.getElementById("mensaje").innerHTML = 
+                    "La división de " + a + " / " + b + " es:  " + (a/b);
+            } else {
+                document.getElementById("mensaje").innerHTML = 
+                    "La opción introducida es incorrecta. Introduce un valor de 1 a 4.";
+            }             
+        }
+    </script>
+</body>
+</html>

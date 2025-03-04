@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 29 - Primos</title>
+</head>
+<body>
+    <h1>Ejercicio 29: Primos.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Primos</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "";
+            let num, i;
+            let primo = true;
+
+            for (num = 2; num <= 100000; num++) {
+                primo = true;
+                for (i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) {
+                        primo = false;
+                        break;
+                    } 
+                } 
+                
+                if (primo)
+                    mensaje += num + ", ";
+            }
+
+
+            
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 27 - Factorial</title>
+</head>
+<body>
+    <h1>Ejercicio 27: Factorial.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Factorial</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let i, num, fact = 1;
+
+            num = parseInt(prompt("Introduce un número para calcular su factorial: "));
+
+            for (i = 1; i <= num; i++) 
+                fact *= i;
+            
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = fact;
+        }
+
+    </script>
+</body>
+</html>

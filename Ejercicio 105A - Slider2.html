@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 105 - Segundo slider</title>
+</head>
+<body>
+    <h1>Ejercicio 105: Segundo slider.</h1>
+    <hr>
+    <button id="boton" type="button" onclick="primera();"><<</button>
+    <button id="boton" type="button" onclick="anterior();"><</button>
+    <button id="boton" type="button" onclick="play();">Play</button>
+    <button id="boton" type="button" onclick="stop();">Stop</button>
+    <button id="boton" type="button" onclick="siguiente();">></button>
+    <button id="boton" type="button" onclick="ultima();">>></button>
+    <hr>
+    <section>
+        <img id="slider" src="" alt="imagen de prueba" width="300px">
+    </section>
+
+    <script>
+        let fotos = ["gato_atento.png", 
+                    "gato_atento2.jpg", 
+                    "gato_cabeza.webp", 
+                    "gato_cabeza2.jpg"];
+        let posicion = 0;
+        let temp;
+        
+        document.getElementById("slider").src = "img/" + fotos[posicion];
+
+        // Función que hace de programa principal
+        function siguiente() {
+            posicion++;
+            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            console.log(posicion);
+        }
+
+        function anterior() {
+            posicion--;
+            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            console.log(posicion);
+        }
+
+        function primera() {
+            posicion = 0;
+            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            console.log(posicion);
+        }
+
+        function ultima() {
+            posicion = fotos.length - 1;
+            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            console.log(posicion);
+        }
+
+        function play() {
+            temp = setInterval(siguiente, 2000);
+        }
+
+        function stop() {
+            clearInterval(temp);
+        }
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 8 - Par o impar</title>
+</head>
+<body>
+    <h1>Ejercicio 8: programa que pide al usuario un número e indica si es PAR o IMPAR.</h1>
+    <h2>Empezamos a trabajar con condiciones (if/else/else if)</h2>
+    <hr>
+    <button type="button" onclick="miFuncion()">Par o Impar</button>
+    <hr>
+    <p id="mensaje">De momento has pulsado 0 veces el botón.</p>
+
+    <script>
+        function miFuncion() {
+            let num = parseInt(prompt("Introduce un número para saber si es par o impar: "))
+            let resto;
+
+            // Versión 1 
+            resto = num % 2;
+
+            if (resto == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es PAR.";
+            } else {
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es IMPAR.";
+            }
+
+            // Versión 2
+            if (num % 2 == 0) 
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es PAR.";
+             else 
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es IMPAR.";
+        }
+    </script>
+</body>
+</html>

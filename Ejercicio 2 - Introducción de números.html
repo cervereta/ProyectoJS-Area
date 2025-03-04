@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 2 - Introducción de números</title>
+</head>
+<body>
+    <h1>Ejercicio 2: introducción de números por parte del usuario.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Pincha aquí!! :D</button>
+
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let a, b, suma;
+
+            // OJO: prompt siempre devuelve texto
+            // Para introducir números enteros (sin decimales) debemos usar parseInt para transformarlos en entero
+            a = parseFloat(prompt("Por favor, introduce un número: "));
+
+            // Para introducir números reales (con decimales) debemos usar parseFloat para transformarlos en reales
+            b = parseFloat(prompt("Por favor, introduce otro número: "));
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = a + b;
+                
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 16 - Cuenta números introducidos por el usuario y los acumula</title>
+</head>
+<body>
+    <h1>Ejercicio 16: programa que cuenta números introducidos por el usuario y los acumula.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion()">Contar y acumular</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let cont = 0, sum = 0;
+            let num = parseInt(prompt("\nPor favor, introduce un número"));
+            
+            console.log(num);
+            
+            while (num != 0) {
+                cont++;
+                
+                // Vamos acumulando (sumatorio) de los números introducidos
+                //sum = sum + num;
+                sum += num;
+                
+                // Resultados parciales por consola
+                console.log("Contador = " + cont);
+                console.log("De momento, llevamos sumado: " + sum);
+
+                num = parseInt(prompt("\nPor favor, introduce un número"));
+            }
+            
+            document.getElementById("mensaje").innerHTML = 
+                "El usuario ha introducido " + cont + " números. La suma de todos ellos es: " + sum;
+
+
+        }
+    </script>
+</body>
+</html>

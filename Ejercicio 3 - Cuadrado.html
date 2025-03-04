@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 3 - Operaciones con cuadrados</title>
+</head>
+<body>
+    <h1>Ejercicio 3: programa que pide al usuario un lado de un cuadrado y calcula su perímetro y su área.</h1>
+    <h2>Empezamos a trabajar con operadores aritméticos.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Operaciones con cuadrados</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let lado, perimetro, area;
+
+            lado = parseFloat(prompt("Por favor, introduce un lado del cuadrado: "));
+
+            perimetro = lado * 4; // lado + lado + lado + lado
+            area = lado ** 2; // lado * lado
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = 
+                "Para un cuadrado de lado " + lado + ":<br>" +
+                "  - su perímetro es: " + perimetro + ".<br>" +
+                "  - su área es: " + area + ".";
+        }
+
+    </script>
+</body>
+</html>

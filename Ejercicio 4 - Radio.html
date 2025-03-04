@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 4 - Operaciones con radios</title>
+</head>
+<body>
+    <h1>Ejercicio 4: programa que pide al usuario un radio y calcula la longitud de la circunferencia, su área y el volumen de la esfera.</h1>
+    <h2>Introducimos la exponencianción (Operador ** o Math.pow(x,y))</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Operaciones con radios</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+
+            let radio, long, area, vol1, vol2;
+            const PI = 3.141592; // Constante definida por nosotros
+
+            radio = parseFloat(prompt("Por favor, introduce el radio de un círculo: "));
+
+            long = 2 * PI * radio;
+            area = PI * (radio ** 2);
+            
+            // Aquí usamos el valor de PI definido por nosotros en las declaraciones
+            vol1 = (4 * PI * (radio ** 3)) / 3;
+            
+            // Aquí usamos el valor de PI definido en la librería matemática
+            vol2 = (4/3) * Math.PI * (radio ** 3); Math.PI;
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = 
+                "Para un círculo de radio " + radio + ":<br>" +
+                "  - su perímetro es: " + long + ".<br>" +
+                "  - su área es: " + area + ".<br>" +
+                "  - su volumen 1 es: " + vol1 + ".<br>" +
+                "  - su volumen 2 es: " + vol2 + ".";
+                
+        }
+
+    </script>
+</body>
+</html>

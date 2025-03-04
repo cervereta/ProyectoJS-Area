@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 40 - Vector de primos</title>
+</head>
+<body>
+    <h1>Ejercicio 40: Vector de primos.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Vector</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            const tam = 100;
+            const vec = [];
+            let cont = 0;
+
+            // Creamos el vector de número aleatorios
+            for (i = 0; i < tam; i++) {
+                vec[i] = parseInt(Math.random() * 100 + 1);
+                console.log(vec[i]);
+            }
+
+            // Contamos los primos
+            for (i = 0; i < tam; i++)
+                if (esPrimo(vec[i])) cont++;
+
+            // Mostramos los resultados
+            document.getElementById("mensaje").innerHTML = "Vector: " + vec + "<br>Primos: " + cont;
+        }
+
+        // Función que determina si un número es primo o no
+        function esPrimo(n) {
+            for(let i = 2; i < Math.sqrt(n); i++)
+                if (n % i == 0) return false;
+        
+            return true;
+        }
+    </script>
+</body>
+</html>

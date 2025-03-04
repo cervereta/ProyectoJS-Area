@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 36 - Vector con números del 10 al 1</title>
+</head>
+<body>
+    <h1>Ejercicio 36: Vector con números del 10 al 1.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Vector</button>
+    <hr>
+    <p id="mensaje1"></p>
+    <p id="mensaje2"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            const vec = [];
+
+            for (i = 0; i < 10; i++) {
+                vec[i] = 10 - i;
+            }
+
+            document.getElementById("mensaje1").innerHTML = vec;
+
+            // ¡¡¡Esta forma no es la habitual!!! ¡¡CUIDADO!!
+            const vec2 = [];
+            for (i = 10; i > 0 ; i--) {
+                vec2[10 - i] = i;
+            }
+            document.getElementById("mensaje2").innerHTML = vec2;
+        }
+    </script>
+</body>
+</html>

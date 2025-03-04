@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 10 - Múltiplos de 5 y 9</title>
+</head>
+<body>
+    <h1>Ejercicio 10: programa que pide al usuario un número e indica si es múltiplo de 5 y de 9.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion()">Múltiplo de 5 y de 9r</button>
+    <hr>
+    <!-- Párrafo donde colocaremos los mensajes a transmitir al usuario -->
+    <p id="mensaje">De momento has pulsado 0 veces el botón.</p>
+
+    <script>
+        function miFuncion() {
+            let num = parseInt(prompt("Introduce un número para saber si es par o impar: "))
+
+            // Versión 1
+            if (num % 5 == 0 && num % 9 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es múltiplo de 5 y 9.";
+            } else {
+                if (num % 5 == 0) {
+                    document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es múltiplo de 5.";
+                } else if (num % 9 == 0) {
+                    document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es múltiplo de 9.";
+                } else {
+                    document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " NO es múltiplo de 5 ni de 9.";
+                }
+            }
+
+            // Versión 2
+            if (num % 5 == 0 && num % 9 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es múltiplo de 5 y 9.";
+            } else if (num % 5 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                "El número " + num + " es múltiplo de 5.";
+            } else if (num % 9 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                "El número " + num + " es múltiplo de 9.";
+            } else {
+                document.getElementById("mensaje").innerHTML = 
+                "El número " + num + " NO es múltiplo de 5 ni de 9.";
+            }
+
+            // Versión 3 --> ¡¡Incorrecto!!
+            /*
+            if (num % 5 == 0 && num % 9 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                    "El número " + num + " es múltiplo de 5 y 9.";
+            } 
+
+            if (num % 5 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                "El número " + num + " es múltiplo de 5.";
+            }
+            if (num % 9 == 0) {
+                document.getElementById("mensaje").innerHTML = 
+                "El número " + num + " es múltiplo de 9.";
+            } else {
+                document.getElementById("mensaje").innerHTML = 
+                "El número " + num + " NO es múltiplo de 5 ni de 9.";
+            }
+            */
+        }
+    </script>
+</body>
+</html>

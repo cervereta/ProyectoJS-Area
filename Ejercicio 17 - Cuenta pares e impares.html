@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 17 - Cuenta pares e impares</title>
+</head>
+<body>
+    <h1>Ejercicio 17: programa que cuenta números pares e impares introducidos por el usuario.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion()">Menú con operaciones aritméticas</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let cont = 0,   // Cuenta los números totales introducidos
+                sum = 0,    // Suma todos los números introducidos
+                pares = 0,  // Cuenta los pares
+                impares = 0;// Cuenta los impares
+
+            let num = parseInt(prompt("\nPor favor, introduce un número"));
+            
+            console.log(num);
+            
+            while (num != 0) {
+                cont++;
+                
+                //sum = sum + num;
+                sum += num;
+                /*
+                if (num % 2 == 0)   
+                    pares++; 
+                else                
+                    impares++;
+                */
+                (num % 2 == 0)?pares++:impares++;
+
+                console.log("Contador = " + cont);
+                console.log("De momento, llevamos sumado: " + sum);
+
+                num = parseInt(prompt("\nPor favor, introduce un número"));
+            }
+            
+            document.getElementById("mensaje").innerHTML = 
+                "El usuario ha introducido " + cont + " números. La suma de todos ellos es: " + sum + ". Pares: " + pares + ". Impares: " + impares;
+        }
+    </script>
+</body>
+</html>

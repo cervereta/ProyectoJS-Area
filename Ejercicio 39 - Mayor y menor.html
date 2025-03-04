@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 39 - Mayor y menor de un vector</title>
+</head>
+<body>
+    <h1>Ejercicio 38: Mayor y menor de un vector.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Vector</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            const tam = 1000;
+            const vec = [];
+            let mensaje = "", mayor, menor, suma = 0;
+
+            for (i = 0; i < tam; i++) {
+                // Las tres sentencias siguientes son equivalentes. Solo hace falta hacer una
+                vec[i] = parseInt(Math.random() * 100 + 1);
+                console.log(vec[i]);
+            }
+
+            mayor = vec[0];
+            menor = vec[0];
+
+            for (i = 0; i < tam; i++) {
+                // Calculo el mayor
+                if (mayor < vec[i])
+                    mayor = vec[i];
+
+                // Calculo el menor
+                if (menor > vec[i])
+                    menor = vec[i];
+
+                suma += vec[i];
+            }
+
+            document.getElementById("mensaje").innerHTML = mayor + " - " + menor + " - " + suma + " - " + (suma/tam);
+        }
+    </script>
+</body>
+</html>

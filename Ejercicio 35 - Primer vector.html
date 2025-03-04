@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 35 - Vector con números del 1 al 10</title>
+</head>
+<body>
+    <h1>Ejercicio 35: Vector con números del 1 al 10.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Vector</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            const vec = [];
+
+            for (i = 0; i < 10; i++) {
+                vec[i] = i + 1;
+                console.log("Posición " + i + ": " + (i+1));
+                console.log(vec[i]);
+            }
+
+            document.getElementById("mensaje").innerHTML = vec;
+        }
+    </script>
+</body>
+</html>

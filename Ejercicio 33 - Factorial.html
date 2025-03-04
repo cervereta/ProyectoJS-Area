@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 33 - Factorial</title>
+</head>
+<body>
+    <h1>Ejercicio 33: Factorial.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Factorial</button>
+    <hr>
+    <p id="mensaje1"></p>
+    <p id="mensaje2"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            let num = parseInt(prompt("Introduce un número: "));
+
+            document.getElementById("mensaje1").innerHTML = factorial1(num);
+            document.getElementById("mensaje2").innerHTML = factorial2(num);
+        }
+
+        // Versión 1: decreciente
+        function factorial1(num) {
+            let f = 1;
+
+            for (let i = num; i >= 1; i--) 
+                f *= i;
+
+            return f;
+        }
+
+        // Versión 2: creciente
+        function factorial2(num) {
+            let f = 1;
+            
+            for (let i = 1; i <= num; i++) 
+                f *= i;
+
+            return f;
+        }
+    </script>
+</body>
+</html>

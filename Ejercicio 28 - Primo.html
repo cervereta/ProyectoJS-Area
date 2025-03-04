@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 28 - Primo</title>
+</head>
+<body>
+    <h1>Ejercicio 27: Factorial.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Primo</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "";
+            let num = parseInt(prompt("Introduce un número para calcular su factorial: "));
+            let primo = true;
+
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    primo = false;
+                    break;
+                } 
+            } 
+            
+            if (primo)
+                mensaje = "El número " + num + " es PRIMO!! :D";
+            else
+                mensaje = "El número " + num + " No es primo :(";
+            
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

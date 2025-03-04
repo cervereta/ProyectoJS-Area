@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 31 - Calculadora</title>
+</head>
+<body>
+    <h1>Ejercicio 31: Calculadora.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Calculadora</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            mensaje = "", cont = 0;
+
+            for(let i = 2; cont <= 1000000; i++)
+                if(esPrimo(i))
+                {
+                    mensaje += i + ", ";
+                    cont++;
+                    if (cont % 1000 == 0) console.log(cont);
+                }
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+        function esPrimo(num) {
+            for (let i = 2; i <= Math.sqrt(num); i++) 
+                if (num % i == 0) 
+                    return false;
+
+            return true;
+        }
+
+    </script>
+</body>
+</html>

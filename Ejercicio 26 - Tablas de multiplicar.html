@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 26 - Tablas de multiplicar</title>
+</head>
+<body>
+    <h1>Ejercicio 26: tablae de multiplicar.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Tablas de multiplicar</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let mensaje = "", tabla, fila;
+
+            for (tabla = 0; tabla <= 10; tabla++) {
+
+                // Este mensaje se guarda una vez para cada tabla, antes de ella
+                mensaje += "Tabla del " + tabla + "<br>---------------------------<br>";
+                
+                for (fila = 0; fila <= 10; fila++) {
+                    mensaje += tabla + " x " + fila + " = " + (tabla*fila) + "<br>";
+                }
+
+                // Este mensaje se guarda para cada tabla, al final de ella
+                mensaje += "<br><br>";
+            }
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

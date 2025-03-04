@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 1 - Saludo</title>
+</head>
+<body>
+    <h1>Ejercicio 1: introducción de texto por parte del usuario.</h1>
+    <h2>Las opciones del menú se gestionan con if/else if/else</h2>
+    <hr>
+    <!-- Este botón desencadenará todas las acciones JS programadas -->
+    <button type="button" onclick="miFuncion();">Pincha aquí!! :D</button>
+
+    <!-- En este elemento meteremos cualquier mensaje que generemos -->
+    <p id="mensaje"></p>
+
+    <script>
+        // Función JS que se ejecutará cuando se pulse en el botón
+        function miFuncion() {
+            let nombre, apellido;
+
+            // Con la sentenci prompt podemos pedirle datos al usuario por teclado
+            nombre = prompt("Por favor, introduce tu nombre: ");
+            apellido = prompt("Por favor, introduce tu apellido");
+
+            // Con getEelementById podemos localizar cualquier elemento de la web utilizando su id
+            // OJO: los id deben ser únicos para que esto funcione correctamente
+            document.getElementById("mensaje").innerHTML = 
+                "Hola, " + nombre + " " + 
+                apellido + ". ¿Cómo estás?";
+        }
+
+    </script>
+</body>
+</html>

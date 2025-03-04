@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 41 - Vector Fibonacci</title>
+</head>
+<body>
+    <h1>Ejercicio 41: Vector Fibonacci.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Vector</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        // Función que hace de programa principal
+        function miFuncion() {
+            const tam = 100;
+            let cont = 0;
+            let vec = [];
+            vec[99] = -1;
+            
+            fibonacci(vec);
+
+            document.getElementById("mensaje").innerHTML = "Vector: " + vec;
+        }
+        
+        function fibonacci(v) {
+            v[0] = 0;
+            v[1] = 1;
+
+            for(let i = 2; i < v.length; i++)
+                v[i] = v[i-1] + v[i-2];
+        }
+    </script>
+</body>
+</html>

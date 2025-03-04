@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 5 - Ecuación de 2º grado</title>
+</head>
+<body>
+    <h1>Ejercicio 5: programa que pide resuelve ecuaciones de 2º grado (Ax<sup>2</sup> + Bx + C = 0).</h1>
+    <h2>Introducimos la raiz cuadrada (Math.sqrt())</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Resolver ecuación de 2º grado</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+
+            /* Este programa resuelve ecuaciones de segundo grado */
+            // Ax2 + Bx + C = 0
+            let a, b, c, x1, x2;
+
+            a = parseFloat(prompt("Por favor, introduce el coeficiente A: "));
+            b = parseFloat(prompt("Por favor, introduce el coeficiente B: "));
+            c = parseFloat(prompt("Por favor, introduce el coeficiente C: "));
+
+            // Hacemos todo el cálculo en una sola línea
+            x1 = (-b + Math.sqrt(b**2 - (4 * a * c))) / (2 * a);
+            
+            // Hacemos el cálculo en varias líneas independientes
+            let radicando = b**2 - (4 * a * c);
+            let raiz = Math.sqrt(radicando);
+            let numerador = -b - raiz;
+            let denominador = 2 * a;
+            x2 = numerador / denominador;
+
+            document.getElementById("mensaje").innerHTML = 
+                "Para esta ecuación de segundo grado: " + a + "x<sup>2</sup> + " + b + "x + " + c + " = 0<br>" +
+                "sus soluciones son:<br>" +
+                "x1 = " + x1 + ".<br>" +
+                "x2 = " + x2;
+        }
+
+    </script>
+</body>
+</html>

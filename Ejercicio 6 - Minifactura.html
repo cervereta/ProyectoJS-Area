@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 6 - Línea de factura</title>
+</head>
+<body>
+    <h1>Ejercicio 6: Línea de factura.</h1>
+    <h2>Programa que pide al usuario un artículo, su cantidad y precio y devuelve su importe total añadiendo un 21% de IVA.</h2>
+    <hr>
+    <button type="button" onclick="miFuncion();">Introducir línea de factura</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let articulo, cantidad, precio, total;
+            const iva = 0.21; // Declaramos el IVA como una constante
+
+            articulo = prompt("Introduce el nombre del artículo: ");
+            cantidad = parseInt(prompt("Introduce la cantidad: "));
+            precio   = parseFloat(prompt("Introduce el precio: "));
+
+            // Multiplicamos la cantidad total por 1.21 para añadirle el IVA
+            total = cantidad * precio * (1 + iva);
+
+            document.getElementById("mensaje").innerHTML = 
+                "El total de comprar " + cantidad + " de " + articulo +
+                " a " + precio + " la unidad es: " + total;
+        }
+
+    </script>
+</body>
+</html>

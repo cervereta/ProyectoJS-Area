@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 30 - Primeras funciones</title>
+</head>
+<body>
+    <h1>Ejercicio 30: Primeras funciones.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Primeras funciones</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let n1, n2, n3, resultado;
+            n1 = parseFloat(prompt("Introduce el primer número: "));
+            n2 = parseFloat(prompt("Introduce el segundo número: "));
+            n3 = parseFloat(prompt("Introduce el tercer número: "));
+
+            resultado = mayor3numeros(n1, n2, n3);
+
+            ec2grado(n1, n2, n3);       
+
+            // Mostramos el mensaje por pantalla
+            document.getElementById("mensaje").innerHTML = "El mayor entre " + n1 + ", " + n2 + " y " + n3 + " es: " + resultado;
+        }
+
+        function mayor3numeros(x, y, z) {
+            let mayor;
+
+            if (x >= y && x >= z) 
+                mayor = x;
+            else if (y >= z) 
+                mayor = y;
+            else 
+                mayor = z;
+
+            return mayor;
+        }
+
+        /* Este programa resuelve ecuaciones de segundo grado */
+        // Ax2 + Bx + C = 0
+        function ec2grado(a, b, c) {
+            
+ 
+            // Hacemos todo el cálculo en una sola línea
+            x1 = (-b + Math.sqrt(b**2 - (4 * a * c))) / (2 * a);
+            x2 = (-b - Math.sqrt(b**2 - (4 * a * c))) / (2 * a);
+            
+            console.log("El valor de x1 es: " + x1);
+            console.log("El valor de x2 es: " + x2);
+            /*
+            document.getElementById("mensaje").innerHTML = 
+                "Para esta ecuación de segundo grado: " + a + "x<sup>2</sup> + " + b + "x + " + c + " = 0<br>" +
+                "sus soluciones son:<br>" +
+                "x1 = " + x1 + ".<br>" +
+                "x2 = " + x2;
+            */
+        }
+    </script>
+</body>
+</html>

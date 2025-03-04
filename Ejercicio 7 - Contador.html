@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 7 - Contadores</title>
+</head>
+<body>
+    <h1>Ejercicio 7: programa que incrementa decrementa en 1 un contador cuando se pulsa el botón.</h1>
+    <h2>Se utilizan dos botones independientes para dos funciones. Una añade y otra resta.</h2>
+    <hr>
+    <!-- OJO: cada botón ejecuta una función diferente -->
+    <button type="button" onclick="sumar()">Suma 1 al contador</button>
+    <button type="button" onclick="restar()">Resta 1 al contador</button>
+
+    <!-- Empezamos con un mensaje inicial -->
+    <p id="mensaje">De momento has pulsado 0 veces el botón.</p>
+
+    <script>
+        // Estas variables son globales a todo el script.
+        // Son accesibles por cualquier función.
+        // Se crean cuando se lee su línea, pero no se destruyen.
+        let contador = 0, sumas = 0, restas = 0;
+
+        function sumar() {
+            // Estas variables son locales a la función.
+            // Pueden ser accesible solo dentro de la función. 
+            // Se crean cuando se lee su línea y se destruyen cuando se acaba de ejecutar la función.
+            contador++;
+            sumas++;
+            console.log("El contador vale: " + contador);
+            console.log("Has sumado  " + sumas + " veces.");
+            //contador = contador + 1;
+
+            document.getElementById("mensaje").innerHTML = 
+                "De momento has pulsado " + contador + " veces el botón.";
+        }
+
+        function restar() {
+            contador--;
+            restas++;
+            console.log("El contador vale: " + contador);
+            console.log("Has restado  " + restas + " veces.");
+            //contador = contador + 1;
+
+            document.getElementById("mensaje").innerHTML = 
+                "De momento has pulsado " + contador + " veces el botón.";
+        }
+    </script>
+</body>
+</html>

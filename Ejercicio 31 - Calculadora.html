@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Ejercicio 31 - Calculadora</title>
+</head>
+<body>
+    <h1>Ejercicio 31: Calculadora.</h1>
+    <hr>
+    <button type="button" onclick="miFuncion();">Calculadora</button>
+    <hr>
+    <p id="mensaje"></p>
+
+    <script>
+        function miFuncion() {
+            let opcion, n1, n2, resultado;
+            
+            opcion = parseInt(prompt("Introduce la opción deseada:\n\n1. Sumar\n2. Restar\n3. Multiplicar\n4. Dividir\n5. Raiz cuadrada\n\n0. Salir\n"));
+
+            while (opcion != 0) {
+                switch (opcion) {
+                    case 1:
+                        n1 = parseFloat(prompt("Introduce el primer número: "));
+                        n2 = parseFloat(prompt("Introduce el segundo número: "));
+
+                        resultado = suma(n1, n2);
+
+                        document.getElementById("mensaje").innerHTML = "La suma de " + n1 + " más " + n2 + " es: " + resultado;
+
+                        break;
+                    case 2:
+                        n1 = parseFloat(prompt("Introduce el primer número: "));
+                        n2 = parseFloat(prompt("Introduce el segundo número: "));
+
+                        resultado = resta(n1, n2);
+
+                        document.getElementById("mensaje").innerHTML = "La resta de " + n1 + " menos " + n2 + " es: " + resultado;
+
+                        break;
+                    case 3:
+                        quieroMultiplicar();
+                        break;
+                    case 4:
+                        n1 = parseFloat(prompt("Introduce el primer número: "));
+                        n2 = parseFloat(prompt("Introduce el segundo número: "));
+
+                        document.getElementById("mensaje").innerHTML = "La resta de " + n1 + " menos " + n2 + " es: " + division(n1, n2);
+
+                        break;
+                    case 5:
+                        n1 = parseFloat(prompt("Introduce el primer número: "));
+                        document.getElementById("mensaje").innerHTML = "La raiz cuadrada de " + n1 + "es: " + Math.sqrt(n1);
+                        break;
+                    default:
+                        alert("Estás todo bobo!!");
+                } // Fin del switch
+
+                opcion = parseInt(prompt("Introduce la opción deseada:\n\n1. Sumar\n2. Restar\n3. Multiplicar\n4. Dividir\n5. Raiz cuadrada\n\n0. Salir\n"));
+                
+            } // Fin del while
+        } // Fin del programa principal
+
+        function suma(n1, n2) {
+            let resultado;
+            resultado = n1 + n2;
+            return resultado;
+        }
+
+        function resta (n1, n2) { 
+            return n1 - n2; 
+        }
+ 
+        function multiplicacion (n1, n2) { 
+            return n1 * n2; 
+        }
+
+        function division (n1, n2) { 
+            return n1 / n2; 
+        }
+
+        function quieroMultiplicar() {
+            let n1 = parseFloat(prompt("Introduce el primer número: "));
+            let n2 = parseFloat(prompt("Introduce el segundo número: "));
+
+            resultado = multiplicacion(n1, n2);
+
+            document.getElementById("mensaje").innerHTML = "La multiplicación de " + n1 + " por " + n2 + " es: " + resultado;
+        }
+    </script>
+</body>
+</html>
