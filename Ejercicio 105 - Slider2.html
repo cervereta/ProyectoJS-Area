@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript - Ejercicio 105 - Segundo slider</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Ejercicio 105: Segundo slider.</h1>
-    <hr>
+    <hr />
     <button id="boton" type="button" onclick="primera();"><<</button>
     <button id="boton" type="button" onclick="anterior();"><</button>
     <button id="boton" type="button" onclick="play();">Play</button>
     <button id="boton" type="button" onclick="stop();">Stop</button>
     <button id="boton" type="button" onclick="siguiente();">></button>
     <button id="boton" type="button" onclick="ultima();">>></button>
-    <hr>
+    <hr />
     <section>
-        <img id="slider" src="" alt="imagen de prueba" width="300px">
+      <img id="slider" src="" alt="imagen de prueba" width="300px" />
     </section>
 
     <script>
-        let fotos = ["gatitos.jpg", 
-                    "gatitos2.jpg", 
-                    "Kira.jpg", 
-                    "losotros.jpg"];
-        let posicion = 0;
-        let temp;
-        
-        document.getElementById("slider").src = "images/" + fotos[posicion];
+      let fotos = ["gatitos.jpg", "gatitos2.jpg", "Kira.jpg", "losotros.jpg"];
+      let posicion = 0;
+      let temp;
 
-        // Función que hace de programa principal
-        function siguiente() {
-            posicion++;
-            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
-            console.log(posicion);
+      document.getElementById("slider").src = "images/" + fotos[posicion];
+
+      // Función que hace de programa principal
+      function siguiente() {
+        posicion++;
+        document.getElementById("slider").src =
+          "images/" + fotos[Math.abs(posicion % fotos.length)];
+        console.log(posicion);
+      }
+
+      function anterior() {
+        posicion--;
+        document.getElementById("slider").src =
+          "images/" + fotos[Math.abs(posicion % fotos.length)];
+        console.log(posicion);
+      }
+
+      function primera() {
+        posicion = 0;
+        document.getElementById("slider").src =
+          "images/" + fotos[Math.abs(posicion % fotos.length)];
+        console.log(posicion);
+      }
+
+      function ultima() {
+        posicion = fotos.length - 1;
+        document.getElementById("slider").src =
+          "images/" + fotos[Math.abs(posicion % fotos.length)];
+        console.log(posicion);
+      }
+
+      async function play() {
+        while (true) {
+          siguiente();
+          await sleep(1000);
         }
+        //console.log(posicion);
+      }
 
-        function anterior() {
-            posicion--;
-            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
-            console.log(posicion);
-        }
+      function sleep(ms) {
+        return new Promise((resolve) => (temp = setTimeout(resolve, ms)));
+      }
 
-        function primera() {
-            posicion = 0;
-            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
-            console.log(posicion);
-        }
-
-        function ultima() {
-            posicion = fotos.length - 1;
-            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
-            console.log(posicion);
-        }
-
-        async function play() {
-            while(true) {
-                siguiente();
-                await sleep(1000);
-            }
-            //console.log(posicion);
-        }
-
-        function sleep(ms) {
-            return new Promise(resolve => temp = setTimeout(resolve, ms));
-        }
-
-        function stop() {
-            clearTimeout(temp);
-        }
-
-        
+      function stop() {
+        clearTimeout(temp);
+      }
     </script>
-
-</body>
+  </body>
 </html>
