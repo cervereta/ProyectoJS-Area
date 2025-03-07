@@ -11,17 +11,17 @@
     <button id="boton" type="button" onclick="cambioImagen();">Cambiar imagen</button>
     <hr>
     <section>
-        <img id="imagen" src="gato_atento.png" alt="imagen de prueba">
+        <img id="imagen" src="/images/gatitos.jpg" width="300px" alt="imagen de prueba">
     </section>
 
     <script>
         // Función que hace de programa principal
         function cambioImagen() {
-            if (document.getElementById("imagen").src.includes("gato_atento.png") ) {
-                document.getElementById("imagen").src = "gato_atento2.jpg"; 
+            if (document.getElementById("imagen").src.includes("/images/gatitos.jpg") ) {
+                document.getElementById("imagen").src = "/images/gatitos2.jpg"; 
             }
             else {
-                document.getElementById("imagen").src = "gato_atento.png";             }
+                document.getElementById("imagen").src = "/images/gatitos.jpg";             }
             }
     </script>
 </body>

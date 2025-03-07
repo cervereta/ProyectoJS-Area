@@ -20,37 +20,37 @@
     </section>
 
     <script>
-        let fotos = ["gato_atento.png", 
-                    "gato_atento2.jpg", 
-                    "gato_cabeza.webp", 
-                    "gato_cabeza2.jpg"];
+        let fotos = ["gatitos.jpg", 
+                    "gatitos2.jpg", 
+                    "Kira.jpg", 
+                    "losotros.jpg"];
         let posicion = 0;
         let temp;
         
-        document.getElementById("slider").src = "img/" + fotos[posicion];
+        document.getElementById("slider").src = "images/" + fotos[posicion];
 
         // Función que hace de programa principal
         function siguiente() {
             posicion++;
-            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
             console.log(posicion);
         }
 
         function anterior() {
             posicion--;
-            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
             console.log(posicion);
         }
 
         function primera() {
             posicion = 0;
-            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
             console.log(posicion);
         }
 
         function ultima() {
             posicion = fotos.length - 1;
-            document.getElementById("slider").src = "img/" + fotos[Math.abs(posicion % fotos.length)];
+            document.getElementById("slider").src = "images/" + fotos[Math.abs(posicion % fotos.length)];
             console.log(posicion);
         }
 
